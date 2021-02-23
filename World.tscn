@@ -714,28 +714,28 @@ position = Vector2( 224, 16 )
 
 [node name="AnimatedSprite" parent="YSort/Bats/Bat" index="0"]
 material = SubResource( 50 )
-frame = 0
+frame = 3
 
 [node name="Bat2" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 288, -104 )
 
 [node name="AnimatedSprite" parent="YSort/Bats/Bat2" index="0"]
 material = SubResource( 51 )
-frame = 0
+frame = 3
 
 [node name="Bat3" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 232, -208 )
 
 [node name="AnimatedSprite" parent="YSort/Bats/Bat3" index="0"]
 material = SubResource( 52 )
-frame = 0
+frame = 3
 
 [node name="Bat4" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 120, -280 )
 
 [node name="AnimatedSprite" parent="YSort/Bats/Bat4" index="0"]
 material = SubResource( 53 )
-frame = 0
+frame = 3
 
 [node name="Trees" type="YSort" parent="YSort"]
 
