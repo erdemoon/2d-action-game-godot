@@ -1,6 +1,6 @@
 # 2D Action Game
 
-I made an 2D Action Game with following a tutorial. And added some features myself.
+I made an 2D Action Game with following a [tutorial](https://www.youtube.com/watch?v=mAbG8Oi-SvQ). And added some features myself.
 
 ## ScreenShots
 
