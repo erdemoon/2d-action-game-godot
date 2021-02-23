@@ -1,0 +1,76 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Effects/HeartAnimaiton.png" type="Texture" id=1]
+[ext_resource path="res://UI/ItemPickup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Effects/HeartItem.gd" type="Script" id=3]
+[ext_resource path="res://Shadows/SmallShadow.png" type="Texture" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 512, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 1024, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 1536, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 2048, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 2560, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 3072, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 3584, 0, 512, 512 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "Animation",
+"speed": 10.0
+} ]
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 3.51668
+
+[node name="HeartItem" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Shadow" type="Sprite" parent="."]
+position = Vector2( 2.99969, -9.18118 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 8, -8 )
+scale = Vector2( 0.0204186, 0.0191514 )
+frames = SubResource( 9 )
+animation = "Animation"
+frame = 5
+playing = true
+
+[node name="ItemPickup" parent="." instance=ExtResource( 2 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="ItemPickup" index="0"]
+position = Vector2( 7.85789, -7.9981 )
+shape = SubResource( 10 )
+[connection signal="body_entered" from="ItemPickup" to="." method="_on_ItemPickup_body_entered"]
+
+[editable path="ItemPickup"]
